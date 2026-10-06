@@ -166,20 +166,20 @@ button:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
     var p1=b1/(b1+b2)*100;
     function person(cls,n,u,l,f,b){
       return '<div class="person" style="--c:var(--'+cls+')"><p class="who">'+n+'</p><div class="amt">Rs '+nf.format(b)+'</div>'
-        +'<dl><div><dt>Apne units</dt><dd>'+uf.format(u)+'</dd></div>'
-        +'<div><dt>Losses ke units</dt><dd>'+uf.format(l)+'</dd></div>'
+        +'<dl><div><dt>Units</dt><dd>'+uf.format(u)+'</dd></div>'
+        +'<div><dt>Loss units</dt><dd>'+uf.format(l)+'</dd></div>'
         +'<div><dt>Total units</dt><dd>'+uf.format(f)+'</dd></div></dl></div>';
     }
     out.innerHTML = warn
       +'<div class="stats">'
       +'<div class="stat"><small>Per unit rate</small><b>Rs '+nf.format(per)+'</b></div>'
-      +'<div class="stat"><small>Losses ke bina bill</small><b>Rs '+nf.format(tbill)+'</b></div>'
-      +'<div class="stat"><small>Losses units</small><b>'+uf.format(loss)+'</b></div>'
+      +'<div class="stat"><small>Bill without loss units</small><b>Rs '+nf.format(tbill)+'</b></div>'
+      +'<div class="stat"><small>Loss units</small><b>'+uf.format(loss)+'</b></div>'
       +'</div>'
       +'<div class="people">'+person('a',n1,u1,l1,f1,b1)+person('b',n2,u2,l2,f2,b2)+'</div>'
       +'<div class="bar" role="img" aria-label="Bill ki taqseem"><span style="width:'+p1+'%;background:var(--a)"></span><span style="width:'+(100-p1)+'%;background:var(--b)"></span></div>'
       +'<div class="barlbl"><span>'+n1+' '+p1.toFixed(1)+'%</span><span>'+n2+' '+(100-p1).toFixed(1)+'%</span></div>'
-      +'<div class="total"><span>Losses ke sath total bill</span><b>Rs '+nf.format(b1+b2)+'</b></div>';
+      +'<div class="total"><span>Bill with loss units</span><b>Rs '+nf.format(b1+b2)+'</b></div>';
   }
 
   ids.forEach(function(i){$(i).addEventListener('input',render)});
